@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Mrs+Saint+Delafield&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Fonts */
+
+@font-face {
+    font-family: 'Humane';
+    src: url('../../public/fonts/Humane-Bold.otf') format('opentype');
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: 'Humane';
+    src: url('../../public/fonts/Humane-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Humane';
+    src: url('../../public/fonts/Humane-Light.otf') format('opentype');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Maisy';
+    src: url('../../public/fonts/CSMaisy-Regular.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Caleb';
+    src: url('../../public/fonts/CSCalebMono-Regular.otf') format('opentype');
+    font-weight: bold;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    width: 100%;
+    cursor: cell;
+    font-size: 2em;
+    color: #d8d6ce;
+    letter-spacing: 0.05em; 
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    background-image: url("../../public/media/scanned_paper_texture.jpg");
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Navbar */
+
+.navbar{
+    display: flex;
+    padding: 0px;
+    background-color: #00000000;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand {
+    font-family: 'Humane', sans-serif;
+    font-size: 1.7em;
+    font-weight: bolder;
+    color: #d8d6ce;
+    transform: scaleY(0.9);
+}
+
+.navbar-brand:hover {
+    color: #d8d6ce;
+}
+
+/* Titles and paragraphs */
+
+/* Main title */
+
+.mainTitle {
+    margin-top: 0vh;
+    font-family: 'Humane', sans-serif;
+    font-size: 30vw;
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 30vw;
+    transform: scaleY(0.8); 
+}
+
+.mainTitleWhite {
+    font-size: 30vw;
+    transform: scaleY(0.8);
+    font-family: 'Humane', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 5vw;
+    transform: scaleY(0.8);
+}
+
+.overlapTitle {
+    font-family: 'Mrs Saint Delafield', sans-serif;
+    color: #866aff;
+    font-size: 6vw;
+    font-weight: bolder;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+    top: 115%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    white-space: nowrap;
+}
+
+
+
+
+/* Roll Animation */ 
+.roll-hover {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.roll-hover-element-one {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: top 0.3s;
+    pointer-events: auto; 
+}
+
+.roll-hover-element-two {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: top 0.3s;
+    pointer-events: none; 
+}
+
+.roll-hover:hover .roll-hover-element-one {
+    top: -100%;
+    pointer-events: none;
+}
+
+.roll-hover:hover .roll-hover-element-two {
+    top: 50%;
+    pointer-events: auto; 
+}
+
+.blob {
+    position: fixed;
+    width: 30px; /* Initial small size */
+    height: 30px; /* Initial small size */
+    background-color: #d8d6ce;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, left 0.1s ease, top 0.1s ease; /* Transition for size and position change */
+}
+
+.blob.transition {
+    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, left 0.3s ease, top 0.3s ease; /* Transition for size and position change */
+}
+
+.blob.large {
+    width: 100px; /* Larger size on hover */
+    height: 100px; /* Larger size on hover */
+}
