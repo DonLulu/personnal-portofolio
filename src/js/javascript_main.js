@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // Create the blob element
     const blob = document.createElement('div');
     blob.classList.add('blob');
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let mouseX = 0, mouseY = 0;
     let blobX = 0, blobY = 0;
-    const speed = 0.78; // Adjust the speed for latency effect
+    const speed = 0.78;
     let isHovering = false;
 
     // Update the mouse position on mouse move
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateBlob();
 
-    // Handle size transition on hover over clickable elements
+    // Handle size transition of blob on hover over clickable elements
     const clickableElements = document.querySelectorAll('a, button, .clickable');
     clickableElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
@@ -47,9 +48,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         element.addEventListener('mouseleave', () => {
             isHovering = false;
-            blob.style.width = '30px'; // Revert to initial small size
-            blob.style.height = '30px'; // Revert to initial small size
+            blob.style.width = '30px';
+            blob.style.height = '30px';
             blob.classList.remove('transition');
         });
+    });
+
+    // Scroll fade-in functionality
+    const scrollFadeInElements = document.querySelectorAll('.scroll-fade-in');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    scrollFadeInElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // NAVBAR change on scroll
+    const containerFluid = document.querySelector('.container-fluid');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            containerFluid.classList.add('scrolled');
+        } else {
+            containerFluid.classList.remove('scrolled');
+        }
+    });
+});
+
+document.addEventListener("scroll", function () {
+    var pageTop = window.scrollY;
+    var pageBottom = pageTop + window.innerHeight;
+    var tags = document.querySelectorAll(".scroll-fade-in");
+
+    tags.forEach(function (tag) {
+        if (tag.getBoundingClientRect().top + pageTop < pageBottom) {
+            tag.classList.add("visible");
+        } else {
+            tag.classList.remove("visible");
+        }
     });
 });

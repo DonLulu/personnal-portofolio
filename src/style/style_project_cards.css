@@ -1,0 +1,229 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+    grid-gap: 40px;
+    padding: 60px 0;
+}
+
+.cards {
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 60px));
+    gap: 40px;
+}
+
+
+.card_stack {
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease 0s;
+}
+
+.card_stack::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.card_stack1::before {
+    background-image: url("../../public/media/card_thermals/thermal_1_compressed.jpg");
+}
+
+.card_stack4::before {
+    background-image: url("../../public/media/card_thermals/thermal_4_compressed.jpg");
+}
+
+.card_stack6::before {
+    background-image: url("../../public/media/card_thermals/thermal_6_compressed.jpg");
+}
+
+.card_stack9::before {
+    background-image: url("../../public/media/card_thermals/thermal_9_compressed.jpg");
+}
+
+.card_stack10::before {
+    background-image: url("../../public/media/card_thermals/thermal_10_compressed.jpg");
+}
+
+.card_stack8::before {
+    background-image: url("../../public/media/card_thermals/thermal_8_compressed.jpg");
+}
+
+.card {
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: #1d1d1d8f;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card__image-container {
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card__image-container img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.card_content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.card_title {
+    font-family: "Humane", sans-serif;
+    line-height: 0.8em;
+    transform: scaleY(0.7);
+    font-weight: 900;
+    width: max-content;
+    font-size: 3em;
+    font-weight: 400;
+    color: #ecf0f1;
+}
+
+.card_description {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.5em;
+    margin: 0;
+    font-weight: 400;
+    color: #ecf0f1;
+}
+
+.card_info {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Card status */
+
+/* Status Text */
+
+.card_status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    flex-direction: row;
+    padding: 5px 20px;
+    background-color: #25252573;
+    border-radius: 15px;
+}
+
+.card_status_text {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.35em;
+    font-weight: 400;
+    margin: 0;
+    color: #ecf0f1;
+}
+
+.card_status_text_done {
+    color: #039700;
+    text-shadow: 0 0 10px #039700;
+}
+
+.card_status_text_in_progress {
+    color: #fe7f30;
+    text-shadow: 0 0 10px #fe7f30;
+}
+
+
+/* Status Dot */
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot_done {
+    background-color: #039700;
+    box-shadow: 0 0 10px #039700;
+}
+
+.dot_in_progress {
+    background-color: #fe7f30;
+    box-shadow: 0 0 10px #fe7f30;
+}
+
+
+/* Language Text */
+
+.card_language {
+    text-align: center;
+    padding: 5px 7px;
+    background-color: #25252573;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.4em;
+    font-weight: 800;
+    margin: 0;
+    color: #866aff;
+}
+
+
+/* Grid media queries */
+
+@media only screen and (max-width: 1000px) {
+    .card_stack {
+        grid-column-end: span 6;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        grid-gap: 20px;
+    }
+
+    .card_stack {
+        grid-column-end: span 12;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        grid-template-columns: 10px repeat(6, 1fr) 10px;
+        grid-gap: 10px;
+    }
+
+    .cards {
+        grid-column: 2 / span 6;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px;
+    }
+
+    .card_stack {
+        grid-column-end: span 6;
+        margin: 20px;
+    }
+}

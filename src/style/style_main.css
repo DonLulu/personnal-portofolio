@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Mrs+Saint+Delafield&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Mrs+Saint+Delafield&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
     font-family: 'Humane';
@@ -19,22 +20,19 @@
     font-weight: lighter;
 }
 
-@font-face {
-    font-family: 'Maisy';
-    src: url('../../public/fonts/CSMaisy-Regular.otf') format('opentype');
-    font-weight: bold;
+
+
+/* Main content */
+
+html {
+    scroll-behavior: initial;
+    overflow: hidden;
 }
 
-@font-face {
-    font-family: 'Caleb';
-    src: url('../../public/fonts/CSCalebMono-Regular.otf') format('opentype');
-    font-weight: bold;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -45,7 +43,7 @@ body {
     cursor: cell;
     font-size: 2em;
     color: #d8d6ce;
-    letter-spacing: 0.05em; 
+    letter-spacing: 0.05em;
     overflow-x: hidden;
 }
 
@@ -61,9 +59,10 @@ body::before {
     z-index: -1;
 }
 
+
 /* Navbar */
 
-.navbar{
+.navbar {
     display: flex;
     padding: 0px;
     background-color: #00000000;
@@ -71,19 +70,43 @@ body::before {
     justify-content: center;
 }
 
+.container-fluid {
+    text-align: center;
+    margin-top: 2vh;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 20px;
+    backdrop-filter: blur(0);
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease, width 0.5s ease;
+}
+
+.container-fluid.scrolled {
+    width: 40%;
+    background-color: #5b5b5b53;
+    backdrop-filter: blur(10px);
+}
+
 .navbar-brand {
+    margin: 10px 0 0 10px;
     font-family: 'Humane', sans-serif;
     font-size: 1.7em;
+    text-align: center;
     font-weight: bolder;
+    line-height: 5px;
     color: #d8d6ce;
-    transform: scaleY(0.9);
+    transform: scaleY(0.8);
 }
 
 .navbar-brand:hover {
     color: #d8d6ce;
 }
 
-/* Titles and paragraphs */
+
+/* Titles and text */
+
+.titleContainer {
+    margin-bottom: 80vh;
+}
 
 /* Main title */
 
@@ -95,7 +118,7 @@ body::before {
     text-align: center;
     letter-spacing: 0.02em;
     line-height: 30vw;
-    transform: scaleY(0.8); 
+    transform: scaleY(0.8);
 }
 
 .mainTitleWhite {
@@ -124,9 +147,26 @@ body::before {
 }
 
 
+/* About me section */
+.about_me_title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw;
+    font-weight: bolder;
+    color: #d8d6ce;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.about_me_text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3vw;
+    font-weight: normal;
+    color: #d8d6ce;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-/* Roll Animation */ 
+/* Roll Animation */
 .roll-hover {
     width: 50px;
     height: 50px;
@@ -142,7 +182,7 @@ body::before {
     left: 0;
     transform: translateY(-50%);
     transition: top 0.3s;
-    pointer-events: auto; 
+    pointer-events: auto;
 }
 
 .roll-hover-element-two {
@@ -152,7 +192,7 @@ body::before {
     left: 0;
     transform: translateY(-50%);
     transition: top 0.3s;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .roll-hover:hover .roll-hover-element-one {
@@ -162,27 +202,311 @@ body::before {
 
 .roll-hover:hover .roll-hover-element-two {
     top: 50%;
-    pointer-events: auto; 
+    pointer-events: auto;
 }
+
+
+/* Mouse Blob Animation */
 
 .blob {
     position: fixed;
-    width: 30px; /* Initial small size */
-    height: 30px; /* Initial small size */
+    width: 30px;
+    height: 30px;
     background-color: #d8d6ce;
     border-radius: 50%;
     pointer-events: none;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, left 0.1s ease, top 0.1s ease; /* Transition for size and position change */
+    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, left 0.1s ease, top 0.1s ease;
 }
 
 .blob.transition {
-    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, left 0.3s ease, top 0.3s ease; /* Transition for size and position change */
+    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, left 0.3s ease, top 0.3s ease;
 }
 
 .blob.large {
-    width: 100px; /* Larger size on hover */
-    height: 100px; /* Larger size on hover */
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Waves Animation */
+
+@keyframes wave {
+    0% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+
+    60% {
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+}
+
+.wave {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10000;
+    animation: wave .7s ease-in-out;
+}
+
+.wave1 {
+    background-color: #ffe76f;
+    animation-delay: 0s;
+}
+
+.wave2 {
+    background-color: #fc5f5f;
+    animation-delay: 0.05s;
+}
+
+.wave3 {
+    background-color: #4f4fa0;
+    animation-delay: 0.1s;
+}
+
+
+/* Fade-in animation */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+}
+
+
+.fade-in-up {
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.scroll-fade-in {
+    opacity: 0;
+    transition: all .7s;
+    transform: translate(0, 150px);
+    will-change: opacity, transform;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* Horizontal Scrolling Line */
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.scrolling-text {
+    font-family: 'Humane', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10vh;
+    width: 100%;
+    color: #d8d6ce;
+    font-size: 6em;
+    font-weight: bold;
+    will-change: transform;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-right: 100%;
+    animation: scroll 100s linear infinite;
+}
+
+.scrolling-text .text-group {
+    display: inline-block;
+}
+
+/* TEST */
+
+
+.lenis_container {
+    width: 100%;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.col {
+    width: 50%;
+}
+
+#vertical {
+    height: 100vh;
+    width: 100vw;
+}
+
+.vertical__content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.vertical__content .col_left {
+    height: 100%;
+}
+
+.vertical__content .col.col_right {
+    width: 40%;
+    padding: 20px;
+    margin-right: 2vw;
+    background-color: #1e1e1e47;
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+}
+
+
+
+.vertical__item:not(:last-child) {
+    margin-bottom: 90px;
+}
+
+
+/* Card elements */
+
+.cardTitle {
+    font-family: 'Humane', sans-serif;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #d8d6ce;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cardDescription {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #d8d6ce;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cardLanguage {
+    font-family: 'Humane', sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #d8d6ce;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.background_diagram {
+    position: absolute;
+    width: 80vw;
+    height: auto;
+    z-index: -1;
+    will-change: transform, opacity;
+}
+
+.background_diagram_1 {
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.background_diagram_2 {
+    width: 70vw;
+    left: 0;
+    top: 200vh;
+}
+
+.background_diagram_3 {
+    width: 50vw;
+    right: 0;
+    top: 400vh;
+}
+
+
+.background_diagram_4 {
+    width: 40vw;
+    left: 0;
+    top: 430vh;
+}
+
+.background_diagram_5 {
+    width: 60vw;
+    right: 0;
+    top: 500vh;
+}
+
+.footer {
+    padding-top: 20vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer_socials_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    will-change: transform, opacity;
+}
+
+.footer_text_container {
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_text {
+    font-family: 'Mrs Saint Delafield', sans-serif;
+    color: #866aff;
+    font-size: 8vw;
+    font-weight: bolder;
+    text-align: center;
+    z-index: 10;
+    transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+.placeholder {
+    margin-top: 200vh;
 }

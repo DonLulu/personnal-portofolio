@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,53 +8,393 @@
 
     <!-- ------------------CSS imports------------------ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link rel="stylesheet" href="./style/style_main.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.19/dist/lenis.css">
+    <link rel="stylesheet" href="./style/style_project_cards.css">
 
     <!-- ------------------JS imports------------------ -->
     <script src="./js/javascript_main.js"></script>
     <script src="./js/javascript_i18n.js"></script>
     <script src="./js/javascript_text_effect.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+    <!-- ------------------Favicon------------------ -->
+    <link rel="icon" href="./public/media" type="image/x-icon">
 
 </head>
+
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar fixed-top">
+    <nav class="navbar fixed-top fade-in">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LUCAS CIZERON</a>
+            <a class="navbar-brand" onclick="location.reload()">LUCAS CIZERON</a>
             <div class="d-flex">
-                <button class="roll-hover" onclick="window.location.href='https\://github.com/DonLulu'">
+                <button class="roll-hover" formtarget="_blank"
+                    onclick="window.location.href='https\://github.com/DonLulu'">
                     <span class="roll-hover-element-one"><i class="fab fa-github roll-hover-element-one"></i></span>
                     <span class="roll-hover-element-two"><i class="fab fa-github roll-hover-element-two"></i></span>
                 </button>
-                <button class="roll-hover" onclick="window.location.href='mailto:lucas.cizeron@epita.fr'">
+                <button class="roll-hover" formtarget="_blank"
+                    onclick="window.location.href='mailto:lucas.cizeron@epita.fr'">
                     <span class="roll-hover-element-one"><i class="fas fa-envelope roll-hover-element-one"></i></span>
                     <span class="roll-hover-element-two"><i class="fas fa-envelope roll-hover-element-two"></i></span>
                 </button>
-                <button class="roll-hover" onclick="window.location.href='https\://www.linkedin.com/in/cizeron-lucas/'">
+                <button class="roll-hover" formtarget="_blank"
+                    onclick="window.location.href='https\://www.linkedin.com/in/cizeron-lucas/'">
                     <span class="roll-hover-element-one"><i class="fab fa-linkedin roll-hover-element-one"></i></span>
                     <span class="roll-hover-element-two"><i class="fab fa-linkedin roll-hover-element-two"></i></span>
                 </button>
                 <button class="roll-hover">
-                    <span class="roll-hover-element-one" data-i18n="languageSwitch" style="font-size: .8em; font-weight: 700;" data-text="EN"></span>
-                    <span id="language-switch" class="roll-hover-element-two" data-i18n="languageSwitch"  style="font-size: .8em; font-weight: 700;" data-text="EN"></span>
+                    <span class="roll-hover-element-one" data-i18n="languageSwitch"
+                        style="font-size: .8em; font-weight: 700;" data-text="EN"></span>
+                    <span id="language-switch" class="roll-hover-element-two" data-i18n="languageSwitch"
+                        style="font-size: .8em; font-weight: 700;" data-text="EN"></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <div class="p-4">
-        <!-- Removed the old language switch button -->
+
+
+
+    <div class="p-4 fade-in">
     </div>
-    <div class="titleContainer" style="position: relative;">
+
+    <!-- TITLE CONTAINER -->
+    <div class="titleContainer fade-in" style="position: relative;">
         <h1 id="mainTitleColor" class="font-bold mainTitle color-change">LUCAS</h1>
         <h1 class="font-bold mainTitle mainTitleWhite">CIZERON</h1>
         <h2 class="overlapTitle" data-i18n="epitaStudent"></h2>
     </div>
 
-    
+    <section id="vertical">
+        <div class="lenis_container">
+            <div class="vertical__content">
+                <div class="col col_left scroll-fade-in">
+                    <h1 id="mainTitleColor" class="font-bold mainTitle color-change">LUCAS</h1>
+                    <h1 class="font-bold mainTitle mainTitleWhite">CIZERON</h1>
+                    <h2 class="overlapTitle" data-i18n="epitaStudent"></h2>
+
+                </div>
+                <div class="col col_right">
+                    <div class="vertical__item scroll-fade-in">
+                        <h3 class="about_me_title" data-i18n="about_me_title_1"></h3>
+                        <p class="about_me_text" data-i18n="about_me_1"></p>
+                    </div>
+                    <div class="vertical__item scroll-fade-in">
+                        <h3 class="about_me_title" data-i18n="about_me_title_2"></h3>
+                        <p class="about_me_text" data-i18n="about_me_2"></p>
+                    </div>
+                    <div class="vertical__item scroll-fade-in">
+                        <h3 class="about_me_title" data-i18n="about_me_title_3"></h3>
+                        <p class="about_me_text" data-i18n="about_me_3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="horizontal">
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <div class="scrolling-text">
+        <div class="text-group">
+            <span>PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
+                PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS</span>
+        </div>
+        <div class="text-group">
+            <span>PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
+                PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS</span>
+        </div>
+    </div>
+
+    <main>
+        <section class="cards">
+
+
+            <!-- 42SH -->
+
+            <div class="card_stack card_stack1 scroll-fade-in">
+                <div class="card">
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            42SH
+                        </p>
+                        <p class="card_description" data-i18n="_42sh">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_done"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_done" data-i18n="status_done"></p>
+                            </div>
+                            <p class="card_language card_subtext clickable">C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PING -->
+
+            <div class="card_stack card_stack6 scroll-fade-in">
+                <div class="card">
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            PING
+                        </p>
+                        <p class="card_description" data-i18n="ping">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_done"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_done" data-i18n="status_done"></p>
+                            </div>
+                            <p class="card_language card_subtext clickable">Typescript JS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GYMRAT -->
+
+            <div class="card_stack card_stack4 scroll-fade-in">
+                <div class="card">
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            GYMRAT
+                        </p>
+                        <p class="card_description" data-i18n="gymrat">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_in_progress"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_in_progress" data-i18n="status_wip"></p>
+                            </div>
+                            <p class="card_language card_subtext clickable">Flutter Dart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiger -->
+
+            <div class="card_stack card_stack10 scroll-fade-in">
+                <div class="card">
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            TIGER
+                        </p>
+                        <p class="card_description" data-i18n="tiger">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_done"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_done" data-i18n="status_done"></p>
+                            </div>
+                            <p class="card_language card_subtext clickable">C++</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OCR -->
+
+            <div class="card_stack card_stack9 scroll-fade-in">
+                <div class="card">
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            OCR
+                        </p>
+                        <p class="card_description" data-i18n="ocr">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_done"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_done" data-i18n="status_done"></p>
+                            </div>
+                            <p class="card_language card_subtext clickable">C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Portfolio -->
+
+            <div class="card_stack card_stack8 scroll-fade-in">
+                <div class="card">
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            PORTFOLIO
+                        </p>
+                        <p class="card_description" data-i18n="portfolio">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_in_progress"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_in_progress" data-i18n="status_wip"></p>
+                            </div>
+                            <p class="card_language card_subtext clickable">HTML CSS JS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- EXPERIENCES -->
+
+    <div class="scrolling-text">
+        <div class="text-group">
+            <span>EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES
+                EXPERIENCES EXPERIENCES
+                EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES</span>
+        </div>
+        <div class="text-group">
+            <span>EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES
+                EXPERIENCES EXPERIENCES
+                EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES EXPERIENCES</span>
+        </div>
+    </div>
+
+    <main>
+        <section class="cards">
+
+
+            <!-- BPCE-IT -->
+
+            <div class="card_stack card_stack1 scroll-fade-in">
+                <div class="card">
+                    <div class="card__image-container">
+                        <img src="../public/media/BPCE-IT.jpg" />
+                    </div>
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            BPCE-IT
+                        </p>
+                        <p class="card_description" data-i18n="bpce">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_in_progress"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_in_progress" data-i18n="status_wip"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- CSUMB -->
+
+            <div class="card_stack card_stack6 scroll-fade-in">
+                <div class="card">
+                    <div class="card__image-container">
+                        <img src="../public/media/US.jpg" />
+                    </div>
+                    <div class="card_content">
+                        <p class="card_title clickable">
+                            CSUMB
+                        </p>
+                        <p class="card_description" data-i18n="csumb">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_done"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_done" data-i18n="status_done"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GENEVA -->
+
+            <div class="card_stack card_stack4 scroll-fade-in">
+                <div class="card">
+                    <div class="card__image-container">
+                        <img src="../public/media/GENEVA.jpg" />
+                    </div>
+                    <div class="card_content">
+                        <p class="card_title clickable" data-i18n="geneva"></p>
+                        <p class="card_description" data-i18n="geneva_description">
+                        </p>
+                        <div class="card_info">
+                            <div class="card_status">
+                                <span class="dot dot_done"></span>
+                                <p class="card_status_text" data-i18n="status"></p>
+                                <p class="card_status_text card_status_text_done" data-i18n="status_done"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div class="footer">
+        <div class="footer_container scroll-fade-in">
+            <div class="footer_text_container">
+                <p class="footer_text" data-i18n="footer_text"></p>
+                <p class="footer_text" data-i18n="footer_text_2"></p>
+            </div>
+        </div>
+
+        <div class="footer_socials_container">
+            <div class="d-flex">
+                <button class="roll-hover" formtarget="_blank"
+                    onclick="window.location.href='https\://github.com/DonLulu'">
+                    <span class="roll-hover-element-one"><i class="fab fa-github roll-hover-element-one"></i></span>
+                    <span class="roll-hover-element-two"><i class="fab fa-github roll-hover-element-two"></i></span>
+                </button>
+                <button class="roll-hover" formtarget="_blank"
+                    onclick="window.location.href='mailto:lucas.cizeron@epita.fr'">
+                    <span class="roll-hover-element-one"><i class="fas fa-envelope roll-hover-element-one"></i></span>
+                    <span class="roll-hover-element-two"><i class="fas fa-envelope roll-hover-element-two"></i></span>
+                </button>
+                <button class="roll-hover" formtarget="_blank"
+                    onclick="window.location.href='https\://www.linkedin.com/in/cizeron-lucas/'">
+                    <span class="roll-hover-element-one"><i class="fab fa-linkedin roll-hover-element-one"></i></span>
+                    <span class="roll-hover-element-two"><i class="fab fa-linkedin roll-hover-element-two"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----------Fixed elements-------------->
+    <img class="background_diagram background_diagram_1" loading="eager" src="../public/media/diagrams/22.png"></img>
+    <img class="background_diagram background_diagram_2" loading="eager" src="../public/media/diagrams/60.png"></img>
+    <img class="background_diagram background_diagram_3" loading="eager" src="../public/media/diagrams/40.png"></img>
+    <img class="background_diagram background_diagram_4" loading="eager" src="../public/media/diagrams/2.png"></img>
+    <img class="background_diagram background_diagram_5" loading="eager" src="../public/media/diagrams/43.png"></img>
+
+
+    <!-- Secondary script loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="./js/javascript_smooth_scroll.js"></script>
 </body>
+
 </html>

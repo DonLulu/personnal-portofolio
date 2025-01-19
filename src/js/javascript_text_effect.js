@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         letters.forEach((letter) => {
             const span = document.createElement('span');
             span.textContent = letter;
-            span.style.transition = 'color 0.5s ease'; // Add transition for smooth color change
+            span.style.transition = 'color 0.5s ease';
             element.appendChild(span);
         });
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             span.style.color = color;
 
             // Schedule the next color change
-            const randomDelay = Math.random() * (1000 - 200) + 200; // Random delay between 0.2s and 1s
+            const randomDelay = Math.random() * (1000 - 200) + 200;
             setTimeout(() => changeColor(span), randomDelay);
         }
 

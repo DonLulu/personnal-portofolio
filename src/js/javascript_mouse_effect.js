@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         element.addEventListener('mouseleave', () => {
             isHovering = false;
-            blob.style.width = '30px'; // Revert to initial small size
-            blob.style.height = '30px'; // Revert to initial small size
+            blob.style.width = '30px';
+            blob.style.height = '30px';
             blob.classList.remove('transition');
         });
     });
