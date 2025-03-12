@@ -166,6 +166,15 @@ body::before {
     margin-bottom: 20px;
 }
 
+.mobile_message_text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.5em;
+    font-weight: bolder;
+    color: #d8d6ce;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 /* Roll Animation */
 .roll-hover {
     width: 50px;

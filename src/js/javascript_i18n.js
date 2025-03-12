@@ -24,7 +24,8 @@ function switchLanguage(lang) {
             bpce: "6-month internship at BPCE-IT's FabLab, an innovation team responsible for studying the feasibility of innovative projects, developing them, and deploying them. The work is done following the Agile methodology and DevOps culture. During these 6 months, I was able to participate in the development and deployment of 4 internal projects.",
             csumb: "I had the opportunity to study abroad at the California State University - Monterey Bay. It was during this semester that I started web development. Besides the academic aspect, I was able to discover the American culture and travel throughout the country.",
             footer_text: "Sincerely,",
-            footer_text_2: "Lucas."
+            footer_text_2: "Lucas.",
+            mobile_message: "This website is not optimized for mobile, please view it from a computer."
         },
         fr: {
             welcome: "Bienvenue sur mon portfolio",
@@ -51,7 +52,8 @@ function switchLanguage(lang) {
             geneva: "GENÈVE",
             geneva_description: "J'ai développé durant 3 mois un jeu vidéo à but éducatif pour le compte d'un cabinet orthophonique genevois. Le dévelopement s'est fait en C# et se basait sur Unity pour le rendu. Le jeu permettait aux enfants de travailler leur orthographe en explorant un environnement 2D.",
             footer_text: "Cordialement,",
-            footer_text_2: "Lucas."
+            footer_text_2: "Lucas.",
+            mobile_message: "Ce site n'est pas optimisé pour mobile, veuillez le consulter depuis un ordinateur."
         }
     };
 

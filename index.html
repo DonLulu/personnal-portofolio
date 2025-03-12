@@ -23,6 +23,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+    <script>
+        if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = "./mobile.html"; // Change this to the desired mobile page
+        }
+    </script>
 
     <!-- ------------------Favicon------------------ -->
     <link rel="icon" href="./public/media" type="image/x-icon">
